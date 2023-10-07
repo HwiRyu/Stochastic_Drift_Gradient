@@ -24,7 +24,8 @@ $L(\theta)$의 Local minimum을 찾는 알고리즘
 
 $\theta_{n+1} = \theta_n - η \cdot \nabla_\theta L(\theta)$ 를 반복할 때, 특정한 $L$의 조건 하에서(ex. Convex, L-smooth etc.)
 
-$\theta_n \to \theta^*$ 가 되는 것이 알려져 있다. ($L(\theta^*)$는 $L$의 Local minimum))
+$\theta_n \to \theta^\*$ 가 되는 것이 알려져 있다. 
+($L(\theta^\*)$는 $L$의 Local minimum))
 
 그런데 우리가 실제로 학습을 시킬 때에, Loss가 전체 domain에서 convex한건 아주 특별한 상황이다. 거의 모든 경우에 non-convex optimize ploblem을 해결해야 한다.
 
