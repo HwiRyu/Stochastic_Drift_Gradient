@@ -4,11 +4,11 @@
 
 
 ## Notation and Intro
-$\rho := \text {active function, some non-linear function}$
-$\gamma := \text {output function}$
-$W_k := \text {Weight},(d_{k+1} \times d_k) matrix$
-$B_k := \text {Bias},(d_{k+1} \times 1) matrix$
-$L_0 := intput, (d_0 \times 1) matrix$
+$\rho := \text {active function, some non-linear function}$,
+$\gamma := \text {output function}$,
+$W_k := \text {Weight},(d_{k+1} \times d_k) matrix$,
+$B_k := \text {Bias},(d_{k+1} \times 1) matrix$,
+$L_0 := intput, (d_0 \times 1) matrix$,
 $L(x, T) = \text{Loss function, x is output, T is target}$
 
 
