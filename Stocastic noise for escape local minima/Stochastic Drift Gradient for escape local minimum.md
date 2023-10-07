@@ -13,13 +13,16 @@ $L(x, T) = \text{Loss function, x is output, T is target}$
 
 
 $L_1 = W_0 \cdot (L_0) + B_0$
+
 $L_{k+1} = W_k \cdot \rho(L_k) + B_k \text{    }(k \geq 1)$
+
 $F(x;\theta) = \gamma(W_n \cdot \rho(L_{n-1}) + B_n)$
 
 여기서 우리의 목적은 
 $\arg\min_\theta L(F(x;\theta), t_x)$ 를 찾는 것이다.
 
 간단하게, $L(F(x;\theta), t_x) = L(\theta)$ 로 표시하자.
+
 $L(\theta)$의 Local minimum을 찾는 알고리즘
 
 $\theta_{n+1} = \theta_n - η \cdot \nabla_\theta L(\theta)$ 를 반복할 때, 특정한 $L$의 조건 하에서(ex. Convex, L-smooth etc.)
@@ -34,7 +37,11 @@ non-convex optimize ploblem을 해결하기 위해 opimizer들은 두 가지 목
 2) Fast converge
 
 어떻게 Local minimum을 탈출하며 Global minimum을 빠르게 찾아갈 수 있을까?
-이를 위해 Gradient Descent는 Mini-batch를 도입해 Stochastic Gradient Descent를 사용한다. 한번에 전체 dataset에 대해 학습시키는게 아니라, dataset의 일부를 추출해 학습을 수행하고, 그 다음에 또 다른 일부를 추출해 학습시키는걸 반복하는 것이다. 학습에 이런 확률을 도입하는 것으로, 보다 적은 연산으로 optim을 향해가면서, Local minimum을 피하는 것이다. 그리고 이런 SGD를 기반으로, 각 parameter에 대해 다른 학습률을 적용하거나, 학습 속도를 자체적으로 조절하는 여러가지 method들이 개발되어왔다.
+이를 위해 Gradient Descent는 Mini-batch를 도입해 Stochastic Gradient Descent를 사용한다. 
+
+한번에 전체 dataset에 대해 학습시키는게 아니라, dataset의 일부를 추출해 학습을 수행하고, 그 다음에 또 다른 일부를 추출해 학습시키는걸 반복하는 것이다. 
+
+학습에 이런 확률을 도입하는 것으로, 보다 적은 연산으로 optim을 향해가면서, Local minimum을 피하는 것이다. 그리고 이런 SGD를 기반으로, 각 parameter에 대해 다른 학습률을 적용하거나, 학습 속도를 자체적으로 조절하는 여러가지 method들이 개발되어왔다.
 
 그럼 이제 다음 질문을 던져보자. 학습에 다른 확률적 요소를 부여할 수는 없을까? 
 
@@ -45,7 +52,9 @@ Minimatch sampling을 통한 확률적 요소 외에 다른 확률 요소를 추
 ![Alt text](image1.png)
 
 실험적으로 충분히 작은 분산에 대해, 이 알고리즘은 minimum에 수렴한다.
+
 그런데 확률적 요소가 부여되었으므로, 이는 실험적으론 수렴하는 듯 보이면서도 가중치의 갱신 방향이 항상 minimum의 방향이 아니므로 Local minimum을 탈출할 확률을 갖는다.
+
 그럼 어떤 확률로 Local minimum을 탈출하고 어떤 확률로 minimum에 다가갈까.
 
 Theorem 1:
