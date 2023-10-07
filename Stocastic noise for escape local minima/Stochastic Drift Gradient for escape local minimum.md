@@ -44,7 +44,7 @@ Minimatch sampling을 통한 확률적 요소 외에 다른 확률 요소를 추
 
 ![Alt text](image1.png)
 
-실험적으로 충분히 작은 분산에 대해, 이 알고리즘은 Local minimum에 수렴한다.
+실험적으로 충분히 작은 분산에 대해, 이 알고리즘은 minimum에 수렴한다.
 그런데 확률적 요소가 부여되었으므로, 이는 실험적으론 수렴하는 듯 보이면서도 가중치의 갱신 방향이 항상 minimum의 방향이 아니므로 Local minimum을 탈출할 확률을 갖는다.
 그럼 어떤 확률로 Local minimum을 탈출하고 어떤 확률로 minimum에 다가갈까.
 
